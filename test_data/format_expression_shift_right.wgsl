@@ -1,0 +1,1 @@
+fn main() { let x = 1u >> 3u; }

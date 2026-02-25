@@ -1,0 +1,7 @@
+---
+source: tests/fmt.rs
+expression: output.into_bytes()
+input_file: test_data/format_fn_header_no_ws.wgsl
+extension: output
+snapshot_kind: binary
+---

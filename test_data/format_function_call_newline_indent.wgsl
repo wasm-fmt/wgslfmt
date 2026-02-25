@@ -1,0 +1,6 @@
+fn main() {
+    if (false) {
+        min  (
+            x,y );
+    }
+}

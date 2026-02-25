@@ -1,0 +1,4 @@
+fn main() {
+    min  (
+        x,y );
+}

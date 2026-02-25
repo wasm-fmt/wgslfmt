@@ -1,0 +1,35 @@
+[package]
+authors     = ["magic-akari <akari.ccino@gmail.com>"]
+description = "A WASM Based WGSL Formatter"
+name        = "wgslfmt"
+
+edition    = "2024"
+homepage   = "https://github.com/wasm-fmt/wgslfmt"
+keywords   = ["wasm", "wgsl", "formatter", "webgpu"]
+license    = "MIT"
+readme     = "README.md"
+repository = "https://github.com/wasm-fmt/wgslfmt"
+version    = "0.0.0"
+
+	[package.metadata.wasm-pack.profile.release]
+	wasm-opt = ["-Os", "--enable-bulk-memory", "--enable-nontrapping-float-to-int"]
+
+[dependencies]
+serde              = { version = "1.0", features = ["derive"] }
+serde-wasm-bindgen = "0.6"
+wasm-bindgen       = "0.2.113"
+wgsl-formatter     = { git = "https://github.com/wgsl-analyzer/wgsl-analyzer.git" }
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dev-dependencies]
+insta = { version = "1.43", features = ["glob"] }
+
+[profile.release]
+codegen-units = 1
+debug         = false     # set to `true` for debug information
+lto           = true
+opt-level     = "s"
+panic         = "abort"   # Let it crash and force ourselves to write safe Rust.
+strip         = "symbols" # set to `false` for debug information

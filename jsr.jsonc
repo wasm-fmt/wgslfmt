@@ -1,0 +1,22 @@
+{
+	"$schema": "https://jsr.io/schema/config-file.v1.json",
+	"name": "@fmt/wgslfmt",
+	"version": "0.1.0",
+	"exports": {
+		".": "./wgslfmt.js",
+		"./esm": "./wgslfmt_esm.js",
+		"./node": "./wgslfmt_node.js",
+		"./bundler": "./wgslfmt.js",
+		"./web": "./wgslfmt_web.js"
+	},
+	"publish": {
+		"include": [
+			"wgslfmt_*",
+			"wgslfmt.*",
+			"README.md"
+		],
+		"exclude": [
+			"!*"
+		]
+	}
+}

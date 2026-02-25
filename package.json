@@ -1,0 +1,68 @@
+{
+	"name": "@wasm-fmt/wgslfmt",
+	"type": "module",
+	"collaborators": [
+		"magic-akari <akari.ccino@gmail.com>"
+	],
+	"description": "A WASM Based WGSL Formatter",
+	"version": "0.0.0",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/wasm-fmt/wgslfmt.git"
+	},
+	"homepage": "https://github.com/wasm-fmt/wgslfmt",
+	"types": "wgslfmt.d.ts",
+	"files": [
+		"wgslfmt*",
+		"*.d.ts"
+	],
+	"sideEffects": [
+		"./wgslfmt.js",
+		"./wgslfmt_node.js",
+		"./wgslfmt_esm.js"
+	],
+	"keywords": [
+		"wasm",
+		"wgsl",
+		"formatter",
+		"webgpu"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"exports": {
+		".": {
+			"types": "./wgslfmt.d.ts",
+			"webpack": "./wgslfmt.js",
+			"deno": "./wgslfmt.js",
+			"bun": "./wgslfmt_node.js",
+			"module-sync": "./wgslfmt_node.js",
+			"node": "./wgslfmt_node.js",
+			"default": "./wgslfmt_esm.js"
+		},
+		"./esm": {
+			"types": "./wgslfmt.d.ts",
+			"default": "./wgslfmt_esm.js"
+		},
+		"./node": {
+			"types": "./wgslfmt.d.ts",
+			"default": "./wgslfmt_node.js"
+		},
+		"./bundler": {
+			"types": "./wgslfmt.d.ts",
+			"default": "./wgslfmt.js"
+		},
+		"./web": {
+			"types": "./wgslfmt_web.d.ts",
+			"default": "./wgslfmt_web.js"
+		},
+		"./vite": {
+			"types": "./wgslfmt_web.d.ts",
+			"default": "./wgslfmt_vite.js"
+		},
+		"./wasm": "./wgslfmt_bg.wasm",
+		"./package.json": "./package.json",
+		"./*": "./*"
+	}
+}
